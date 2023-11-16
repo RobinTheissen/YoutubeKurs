@@ -1,13 +1,22 @@
-const hour = 23
+// const hour = 23
 
-const name = 'Robin'
+// const name = 'Robin'
 
-if (hour >=6 && hour <13) {
-    console.log(`Good morning ${name}`);
+// if (hour >=6 && hour <13) {
+//     console.log(`Good morning ${name}`);
+// }
+// else if (hour >=13 && hour <18) {
+//     console.log(`Good afternoon ${name}`)
+// }
+// else {
+//     console.log(`Good night ${name}`)
+// } 
+
+const age = 100
+
+if (age <= 6 || age > 64) {
+    console.log('Discount')
 }
-else if (hour >=13 && hour <18) {
-    console.log(`Good afternoon ${name}`)
+else {
+    console.log('No discount')
 }
-else if (true) {
-    console.log(`Good night ${name}`)
-} 
