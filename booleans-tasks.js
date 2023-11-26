@@ -21,3 +21,5 @@ if ((age <= 6 || age > 64) && !isHoliday) {
 else {
     console.log('No discount')
 }
+
+console.log('Ich teste git befehle')
