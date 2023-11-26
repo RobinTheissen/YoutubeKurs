@@ -13,8 +13,9 @@
 // } 
 
 const age = 100
+const isHoliday = true
 
-if (age <= 6 || age > 64) {
+if ((age <= 6 || age > 64) && !isHoliday) {
     console.log('Discount')
 }
 else {
