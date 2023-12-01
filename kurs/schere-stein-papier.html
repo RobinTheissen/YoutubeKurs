@@ -32,5 +32,15 @@
     >
       Papier
     </button>
+
+    <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    alert('Ergebnisse zurückgesetzt.')
+    ">
+      Zurücksetzen
+    </button>
   </body>
 </html>

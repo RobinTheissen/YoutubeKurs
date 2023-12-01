@@ -1,3 +1,10 @@
+let score = JSON.parse(localStorage.getItem('score')) || {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+};
+
+
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
 
@@ -5,38 +12,51 @@ function playGame(playerMove) {
 
     if (playerMove === 'Schere') {
         if (computerMove === 'Schere'){
-            result = 'Unentschieden';
+            result = 'UNENTSCHIEDEN';
         }
         else if(computerMove === 'Stein'){
-            result = 'Verloren';
+            result = 'VERLOREN';
         }
         else if(computerMove === 'Papier'){
-            result = 'Gewonnen';
+            result = 'GEWONNEN';
         }
     }
     else if (playerMove === 'Stein') {
         if (computerMove === 'Stein'){
-            result = 'Unentschieden';
+            result = 'UNENTSCHIEDEN';
         }
-        else if(computerMove === 'Paper'){
-            result = 'Verloren';
+        else if(computerMove === 'Papier'){
+            result = 'VERLOREN';
         }
         else if(computerMove === 'Schere'){
-            result = 'Gewonnen';
+            result = 'GEWONNEN';
         }
     }
     else if (playerMove === 'Papier') {
         if (computerMove === 'Stein'){
-            result = 'Gewonnen';
+            result = 'GEWONNEN';
         }
         else if(computerMove === 'Papier'){
-            result = 'Unentschieden';
+            result = 'UNENTSCHIEDEN';
         }
         else if(computerMove === 'Schere'){
-            result = 'Verloren';
+            result = 'VERLOREN';
         }
     }
-    alert(`Du hast ${playerMove} gewählt. Gegner hat ${computerMove} gewählt. ${result}.`)
+
+    if (result === 'GEWONNEN') {
+        score.wins += 1;
+    } else if (result === 'VERLOREN') {
+        score.losses += 1;
+    } else if (result === 'UNENTSCHIEDEN'){
+        score.ties += 1;
+    }
+
+    localStorage.setItem('score', JSON.stringify(score))
+
+    alert(`Du hast ${playerMove} gewählt. Gegner hat ${computerMove} gewählt. ${result}.
+${score.wins} Gewonnen, ${score.losses} Verloren, ${score.ties} Unentschieden.`)
+    console.log(score)
 }
 
 
