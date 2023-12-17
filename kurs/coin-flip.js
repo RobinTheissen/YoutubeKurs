@@ -1,17 +1,6 @@
-const random = Math.random();
-const guess = 'tail'
+function playGame(guess) {
+    const randomNumber = Math.random();
+    const result = randomNumber < 0.5 ? 'heads' : 'tails';
 
-
-    if (random < 0.5 && guess === 'tail') {
-        result = 'You win!'
-        console.log(`yeah ${guess} was right ,${result}`)
-    }
-    else if (random > 0.5 && guess === 'heads') {
-        result = 'You win!'
-        console.log(`yeah ${guess} was right ,${result}`)
-    }
-    else {
-        console.log(`sorry ${guess} was wrong, you lose`)
-    }
-
-
+    console.log(guess === result ? 'You win!' : 'You lose!');
+  }
