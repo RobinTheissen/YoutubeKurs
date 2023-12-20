@@ -1,4 +1,4 @@
-let cartQuantity = 0;
+let cartQuantity = 0
 
 function resetCart () {
     cartQuantity = 0;
@@ -20,7 +20,6 @@ function updateCartQunatity(input) {
     
     cartQuantity += input;
     console.log(`Cart quanitity: ${cartQuantity}`)
-    
   }
   // Funktion um Produkte den Warenkorb hinzuzufügen und zu entfernen.
   // Maximal 10, Mindestens 0

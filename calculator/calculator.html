@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <script src="calculator.js"></script>
+  </head>
   <body>
     <p>
       <button onclick="
@@ -84,16 +86,5 @@
       ">Clear</button>
     </p>
    
-    <script>
-      let calculation = localStorage.getItem('calculation') || '';
-
-      function updateCalculation(value) {
-        calculation += value;
-        console.log(calculation);
-        localStorage.setItem('calculation', calculation)
-      }
-
-
-    </script>
   </body>
 </html>
