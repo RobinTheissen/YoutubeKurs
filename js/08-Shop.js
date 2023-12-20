@@ -101,3 +101,7 @@ console.log('Hallo'.repeat(3))
 */
 
 
+<<<<<<< HEAD:js/08-Shop.js
+=======
+
+>>>>>>> 17faed7ed8040b8d046a03254d54980698bf96c8:tasks/Shop.js
