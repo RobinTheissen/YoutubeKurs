@@ -3,7 +3,7 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     losses: 0,
     ties: 0,
 };
-//definiert den score
+//definiert/Speichert den score
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -63,8 +63,11 @@ function playGame(playerMove) {
 
     localStorage.setItem('score', JSON.stringify(score))
 
-    alert(`Du hast ${playerMove} gewählt. Gegner hat ${computerMove} gewählt. ${result}`)
-    console.log(score)
+    document.querySelector('.js-score').innerHTML = `${score.wins} Gewonnen, ${score.losses} Verloren, ${score.ties} Unentschieden.`
+
+    document.querySelector('.js-result').innerHTML = `${result}`;
+
+    document.querySelector('.js-moves').innerHTML = `Du hast ${playerMove} gewählt, dein Gegener hat ${computerMove} gewählt`
 }
 
 
@@ -84,4 +87,9 @@ function pickComputerMove() {
         computerMove = 'Papier';
     }
     return computerMove;
+}
+
+
+function updateScoreElement() {
+    document.querySelector('.js-score').innerHTML = `${score.wins} Gewonnen, ${score.losses} Verloren, ${score.ties} Unentschieden.`;
 }

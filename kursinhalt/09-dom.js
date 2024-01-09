@@ -17,3 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event-Listener für das Klick-Ereignis des ausgewählten Elements hinzufügen
     subscribeButton.addEventListener('click', toggleSubscription);
 });
+
+
+
+function calculateFees() {
+    const inputElement = document.querySelector('.js-input');
+    let cost = inputElement.value;
+    
+    if (cost < 40) {
+        cost = cost + 10
+    }
+
+    document.querySelector('.js-fees').innerHTML = `${cost}€`
+}
