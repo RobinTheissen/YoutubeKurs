@@ -1,11 +1,19 @@
 let cartQuantity = 0
 
+function restoreCart() {
+  const storedQuantity = localStorage.getItem('cartQuantity');
+
+  if (storedQuantity !== null) {
+    cartQuantity = parseInt(storedQuantity);
+    showQuantity();
+  }
+}
+
 function resetCart () {
     cartQuantity = 0;
-      console.log('Cart was reset.');
-      console.log(`Cart quantity: ${cartQuantity}`);
+    document.getElementById('quantity').innerHTML = 'Warenkorb zurückgesetzt'
+    localStorage.setItem('cartQuantity', cartQuantity.toString());
 }
-// Funktion um den Warenkorb wieder auf 0 zu setzen
 
 
 function updateCartQunatity(input) {
@@ -19,32 +27,32 @@ function updateCartQunatity(input) {
     }
     
     cartQuantity += input;
-    console.log(`Cart quanitity: ${cartQuantity}`)
+    showQuantity()
+    localStorage.setItem('cartQuantity', cartQuantity.toString());
   }
-  // Funktion um Produkte den Warenkorb hinzuzufügen und zu entfernen.
-  // Maximal 10, Mindestens 0
+ 
 
-
-function showQuantity () {
-    console.log(`Cart quantity: ${cartQuantity}`);
-  }
-  // Gibt die aktuelle Menge der Produkte des Warenkorbs zurück.
-
-
-const product1 = {
-    name: 'Basketball',
-    price: 2095,
+function showQuantity() {
+  document.getElementById('quantity').innerHTML = 'Produkte im Warenkorb: ' + cartQuantity
 }
 
-const product2 = {
-    name: 'Football',
-    price: 3000
-}
+document.addEventListener('DOMContentLoaded', function(){
+  restoreCart();
+  inputButton = document.querySelector('.btn')
+  inputButton.addEventListener('click', showQuantity)
+})
 
-const product3 = {
-  name: 'Basketball',
-  price: 2095,
-}
+
+
+
+
+
+
+
+
+
+
+
 
 /*Function die die Preise von 2 Objekten vergleicht und das günstigere zurückgibt
 

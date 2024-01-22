@@ -1,4 +1,4 @@
-// buttonFunctionality.js
+// Subscribe Button
 function toggle() {
     const buttonElements = document.querySelector('.js-subscribe-button');
 
@@ -9,16 +9,13 @@ function toggle() {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const subscribeButton = document.querySelector('.js-subscribe-button');
     subscribeButton.addEventListener('click', toggle);
 });
 
 
-
-
-
+//shopping calculator
 function calculateFees() {
     const inputElement = document.querySelector('.js-input');
     let cost = parseFloat(inputElement.value);
@@ -67,6 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// 9c
 function choose(option) {
-    document.getElementsByClassName('fill').innerHTML = 'You chose: ' + option
+    document.getElementById('fill').innerHTML = 'You chose: ' + option
 }
+
+
+// 9d
+function showValue() {
+    let inputValue = document.getElementById('meinInput').value
+    let showDiv = document.getElementById('show')
+    showDiv.innerHTML = 'You entered: ' + inputValue
+}
+
+
+// 9e
+document.addEventListener('keyup', function(event){
+        event.preventDefault();
+        showValue()
+})
