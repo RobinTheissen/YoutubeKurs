@@ -12,15 +12,24 @@
     <button class="js-subscribe-button">Subscribe</button>
 
     <br>
+    <button class="button-9a">9a</button><br>
+    <button class="button-9b">9b</button><br>
+    <br>
+    <br>
 
     <div>
         <h2>Shipping fee calculator</h2><br>
         <p>Orders under 40€ = +10€</p>
         <p>Order over 40€ = free shipping</p>
-        <input class="js-input" placeholder="Cost of Order">
+        <input pattern="/^\d+(\.\d{1,2})?$/" type="number" step="0.5" class="js-input" placeholder="Cost of Order">
         <button onclick="calculateFees()">Calculate</button><br>
         <p class="js-fees"></p>
     </div>
 
+    <button onclick="choose('heads')">heads</button>
+    <button onclick="choose('tails')">tails</button>
+    
+
+    <p class="fill"></p> <br>
 </body>
 </html>
