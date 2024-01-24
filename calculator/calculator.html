@@ -71,6 +71,7 @@
         calculation = eval(calculation);
         console.log(calculation);
         localStorage.setItem('calculation', calculation);
+        showCalculation()
       ">=</button>
 
       <button onclick="
@@ -79,12 +80,17 @@
     </p>
 
     <p>
-      <button onclick="
+      <button  onclick="
         calculation = '';
         console.log(calculation);
         localStorage.setItem('calculation', calculation);
+        showCalculation()
       ">Clear</button>
     </p>
+
+    <br>
+
+    <p id="result"></p>
    
   </body>
 </html>
